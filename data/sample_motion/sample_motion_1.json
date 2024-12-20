@@ -1,0 +1,10 @@
+{
+    "motion_id": "motion_1",
+    "joint_angles": {
+        "hip": [0.0, 15.2, 30.0, 25.3],
+        "knee": [0.0, 5.1, 10.2, 15.0],
+        "ankle": [0.0, 2.4, 4.1, 6.0]
+    },
+    "timestamp": [0, 1, 2, 3],
+    "description": "Sample motion data for hip, knee, and ankle joints during a walking cycle."
+}

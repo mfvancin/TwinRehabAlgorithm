@@ -1,0 +1,27 @@
+# Doxyfile for generating C++ documentation
+
+# Set the project name and version
+PROJECT_NAME           = "TwinRehab"
+PROJECT_BRIEF          = "A digital twin for musculoskeletal rehabilitation"
+PROJECT_LOGO           = "logo.png" 
+OUTPUT_DIRECTORY       = docs/build/cpp
+
+# Set the language to C++
+INPUT                  = ../cpp/src, ../cpp/include  # Path to your C++ source and header files
+FILE_PATTERNS          = *.cpp *.hpp *.h
+RECURSIVE              = YES
+
+# Documentation format
+GENERATE_LATEX         = NO  # Disable LaTeX output, useful if you only want HTML output
+GENERATE_HTML          = YES  # Enable HTML output
+HTML_OUTPUT           = docs/build/cpp/html  # Path to the generated HTML documentation
+
+# Enable class and function documentation
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Specify the template for the documentation (optional, default is fine)
+TEMPLATE_RELATIONS     = YES
+TEMPLATE_GRAPHVIZ      = YES

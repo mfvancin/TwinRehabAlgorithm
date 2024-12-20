@@ -1,0 +1,25 @@
+CXX = g++
+CXX_FLAGS = -O3 -Wall -shared -std=c++17 -fPIC
+
+PYTHON_INCLUDE = $(shell python3 -c "from sysconfig import get_paths as gp; print(gp()['include'])")
+PYBIND11_INCLUDE = /path/to/pybind11/include  # Adjust this path to your pybind11 installation
+
+LIBS = -lpython3.x  # Replace with the correct version (e.g., -lpython3.8)
+
+SRC_DIR = src
+OUT_DIR = build
+
+SRC_FILES = $(SRC_DIR)/bind_model.cpp $(SRC_DIR)/bind_kinematics.cpp $(SRC_DIR)/bind_optimizer.cpp
+OBJ_FILES = $(SRC_FILES:.cpp=.o)
+
+# Build shared library
+all: $(OUT_DIR)/bindings.so
+
+$(OUT_DIR)/bindings.so: $(OBJ_FILES)
+	$(CXX) $(CXX_FLAGS) -I$(PYTHON_INCLUDE) -I$(PYBIND11_INCLUDE) -o $@ $^ $(LIBS)
+
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXX_FLAGS) -I$(PYTHON_INCLUDE) -I$(PYBIND11_INCLUDE) -c $< -o $@
+
+clean:
+	rm -rf $(OBJ_FILES) $(OUT_DIR)/bindings.so

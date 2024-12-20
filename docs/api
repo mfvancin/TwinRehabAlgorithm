@@ -1,0 +1,18 @@
+Example Usage of the Musculoskeletal Rehabilitation API
+========================================================
+
+This example demonstrates how to use the `ModelInterface` class to load a musculoskeletal model and make predictions.
+
+.. code-block:: python
+
+    from bindings import bindings
+
+    # Load the model
+    model = bindings.ModelInterface("path/to/model")
+    model.load_model()
+
+    # Predict motion data
+    result = model.predict([1.0, 2.0, 3.0])
+    print(result)
+
+For more advanced examples, see the documentation in the `docs/` directory.

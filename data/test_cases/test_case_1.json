@@ -1,0 +1,18 @@
+{
+    "test_case_id": "test_1",
+    "input_data": {
+        "joint_angles": {
+        "hip": [0.0, 10.0, 20.0, 30.0],
+        "knee": [0.0, 2.0, 4.0, 6.0],
+        "ankle": [0.0, 1.0, 2.0, 3.0]
+        },
+        "patient_id": "patient_01",
+        "motion_type": "walking"
+    },
+    "expected_output": {
+        "rehab_score": 85.0,
+        "optimization_needed": true,
+        "recommendations": ["Increase knee joint range of motion"]
+    },
+    "description": "Test case for evaluating rehabilitation optimization in a walking motion."
+}
