@@ -1,4 +1,5 @@
 #include "biomech/types.hpp"
+#include "types.hpp"
 
 namespace biomech {
     Joint::Joint(const std::string& name, double min_angle, double max_angle)

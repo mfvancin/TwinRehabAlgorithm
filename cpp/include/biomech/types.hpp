@@ -24,6 +24,10 @@ namespace biomech {
         double max_angle{0};
         double max_velocity{0};
         double max_torque{0};
+        Joint(const std::string &name, double min_angle, double max_angle);
+        void updatePosition(const Eigen::Vector3d &position);
+        void updateOrientation(const Eigen::Quaterniond &orientation);
+        bool isWithinLimits(double angle) const;
     };
 
     struct Segment {
