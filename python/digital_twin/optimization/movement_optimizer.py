@@ -7,5 +7,4 @@ class MovementOptimizer:
 
         print("Optimizing movement...")
         difference = self.target_movement - self.current_movement
-        optimized_movement = self.current_movement + 0.1 * difference  # Placeholder
-        return optimized_movement
+        return self.current_movement + 0.1 * difference
