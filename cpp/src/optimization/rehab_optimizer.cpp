@@ -40,7 +40,7 @@ namespace biomech {
             previous_cost = current_cost;
         }
 
-        return optimized_pose;
+        return optimized_pose
     }
 
     std::vector<double> RehabOptimizer::optimizeMuscleActivations(
